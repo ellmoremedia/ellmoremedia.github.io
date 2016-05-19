@@ -1,0 +1,152 @@
+$font-stack: "Roboto", sans-serif;
+$font-size: 16px;
+
+%clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+body {
+	margin: 0;
+	background-color: #FFF;
+	font-family: $font-stack;
+	color: #000;
+	font-size: $font-size;
+	font-weight: 300;
+}
+
+// Common styles
+
+img {
+	max-width: 100%;
+}
+
+a {
+	color: #FF0;
+}
+
+@mixin negative-margin($interior-margin) {
+	margin: $interior-margin;
+}
+
+// Page structure
+$pane-padding-v: 3%;
+$pane-padding-h: 10%;
+
+.pane {
+	padding: $pane-padding-v $pane-padding-h;
+	
+	.inner {
+		margin: auto;
+		max-width: 1200px;
+	}
+	
+	.heading {
+		font-size: 4em;
+		font-weight: 100;
+		text-transform: uppercase;
+		margin: 0;
+	}
+	
+	.desc {
+		font-weight: 300;
+		font-size: 1.8em;
+	}
+}
+
+.portfolio {
+	margin: 0 0 0 -5%;
+	padding: 0;
+	font-size: 0;
+	@extend %clearfix;
+	
+	.feature {
+		$feature-margin: 60px*100%/1260px;
+		float: left;
+		position: relative;
+		width: 360px*100%/1260px;
+		margin: $feature-margin 0 0 $feature-margin;
+		list-style-type: none;
+		
+		a {
+			text-decoration: none;
+			color: inherit;
+		}
+		
+		img {
+			vertical-align: bottom;
+		}
+		
+		.desc {
+			background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%); /* FF3.6+ */
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.8))); /* Chrome,Safari4+ */
+			background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%); /* Opera 11.10+ */
+			background: -ms-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%); /* IE10+ */
+			background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%); /* W3C */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#cc000000',GradientType=0 ); /* IE6-9 */
+			position: absolute;
+			bottom: 0;
+			box-sizing: border-box;
+			width: 100%;
+			padding: 18% 4% 4% 4%;
+			font-size: $font-size;
+		}
+		
+		h2 {
+			font-size: 2em;
+			margin: 0;
+			font-weight: 400;
+		}
+		
+		p {
+			margin: 0;
+			font-weight: 100;
+		}
+	}
+	
+	.feature.big {
+		width: 780px/1260px*100%;
+		font-size: 1.5em;
+	}
+	
+	.feature.big.left {
+		float: left;
+		clear: left;
+	}
+	
+	.feature.big.right {
+		float: right;
+		clear: right;
+	}
+}
+
+// Sections	
+
+#intro {
+	padding: 10% $pane-padding-h;
+	text-align: center;
+	
+	.desc {
+		font-weight: 300;
+		font-size: 1.8em;
+	}
+}
+
+#ourwork {
+	background-color: #2b4466;
+	color: #FFF;
+}
+
+#whoweare {
+	background-color: #FFF;
+	color: #000;
+}
+
+#contact {
+	background-color: #8bc345;
+	color: #FFF;
+}

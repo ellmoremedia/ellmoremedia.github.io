@@ -1,0 +1,84 @@
+$font-stack: "Roboto", sans-serif;
+
+html {
+	font-size: 16px;
+}
+@media (min-width: 500px) {
+	html {
+		font-size: 18px;
+	}
+}
+@media (min-width: 900px) {
+	html {
+		font-size: 20px;
+	}
+}
+@media (min-width: 1400px) {
+	html {
+		font-size: 24px;
+	}
+}
+
+body {
+	margin: 0;
+	background-color: #FFF;
+	font-family: $font-stack;
+	color: #000;
+	font-weight: 300;
+	line-height: 1.6;
+}
+
+.button {
+	display: inline-block;
+	padding: 0.5em 1em;
+	background-color: #006bff;
+	color: #FFF;
+	text-decoration: none;
+}
+
+// Common styles
+
+img {
+	max-width: 100%;
+}
+
+a {
+	color: #FF0;
+}
+
+// Page structure
+$pane-padding-v: 3%;
+$pane-padding-h: 10%;
+
+.pane {
+	padding: $pane-padding-v $pane-padding-h;
+	text-align: center;
+	
+	.inner {
+		margin: auto;
+		max-width: 1200px;
+	}
+	
+	h1 {
+		font-size: 3em;
+		font-weight: 100;
+		text-transform: uppercase;
+		margin: 0;
+	}
+}
+
+// Sections	
+
+#intro {
+	padding: 10% $pane-padding-h;
+}
+
+#whoweare {
+	background-color: #2b4466;
+	color: #FFF;
+}
+
+#contact {
+	background-color: #8bc345;
+	color: #FFF;
+}
